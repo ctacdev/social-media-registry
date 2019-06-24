@@ -13,3 +13,4 @@ public/swagger_docs/
 public/assets/
 .ruby-gemset
 coverage/
+reports/
