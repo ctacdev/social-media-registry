@@ -2,10 +2,10 @@ source 'http://rubygems.org'
 #ruby ENV['RUBY_VERSION']
 
 # Rails
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.11.1'
 
 # DB Connector
-gem 'mysql2'
+gem 'mysql2', '~> 0.4.9'
 
 #social media platforms
 gem 'twitter'
@@ -51,8 +51,8 @@ gem 'unicorn'
 # generate fake data in tests & seeds files
 #gem 'faker'
 
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
+gem 'elasticsearch-model', '0.1.9'
+gem 'elasticsearch-rails', '0.1.9'
 ######
 # Assets / Assets related gems
 ######
