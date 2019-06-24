@@ -7,7 +7,7 @@
 #  user_id    :integer
 #
 
-class GalleryUser < ActiveRecord::Base
+class GalleryUser < ApplicationRecord
   belongs_to :gallery
   belongs_to :user
 end

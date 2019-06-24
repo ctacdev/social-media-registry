@@ -1,10 +1,10 @@
 class Admin::OfficialTagsController < Admin::AdminController
   helper_method :sort_column, :sort_direction
   respond_to :html, :xml, :json, :csv, :xls
-  before_filter :set_tag, only: [:edit, :show, :update, :destroy]
+  before_action :set_tag, only: [:edit, :show, :update, :destroy]
 
-  before_filter :require_admin, except: [:tokeninput]
-  before_filter :admin_two_factor, except: [:tokeninput]
+  before_action :require_admin, except: [:tokeninput]
+  before_action :admin_two_factor, except: [:tokeninput]
   # GET /tags
   # GET /tags.json
   def index

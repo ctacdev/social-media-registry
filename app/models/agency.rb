@@ -20,7 +20,7 @@
 #  api_id                     :integer
 #
 
-class Agency < ActiveRecord::Base
+class Agency < ApplicationRecord
   #attr_accessible :name, :shortname, :info_url, :agency_contact_ids
   
   # each agency has social media outlets

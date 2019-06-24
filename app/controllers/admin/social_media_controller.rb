@@ -44,6 +44,7 @@ class Admin::SocialMediaController < Admin::AdminController
       @outlets = Outlet.es_search(params, sort_column, sort_direction).per(1000).records
     end
     respond_to do |format|
+      format.html { send_data @outlets.to_csv }
       format.csv { send_data @outlets.to_csv }
     end
   end

@@ -12,7 +12,7 @@
 #  updated_at   :datetime         not null
 #
 
-class RelatedPolicy < ActiveRecord::Base
+class RelatedPolicy < ApplicationRecord
 
 
   has_many :outlet_related_policies

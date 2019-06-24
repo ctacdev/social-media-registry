@@ -7,7 +7,7 @@
 #  user_id   :integer
 #
 
-class OutletUser < ActiveRecord::Base
+class OutletUser < ApplicationRecord
   belongs_to :user
   belongs_to :outlet
 end

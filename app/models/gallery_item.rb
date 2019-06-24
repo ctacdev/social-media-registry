@@ -9,7 +9,7 @@
 #  item_order :integer          default(0)
 #
 
-class GalleryItem < ActiveRecord::Base
+class GalleryItem < ApplicationRecord
   belongs_to :gallery
   belongs_to :item, polymorphic: true
 

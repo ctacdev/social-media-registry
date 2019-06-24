@@ -17,7 +17,7 @@
 #  number_of_ratings :integer
 #  mongo_id          :string(255)
 #
-class MobileAppVersion < ActiveRecord::Base
+class MobileAppVersion < ApplicationRecord
 	
   belongs_to :mobile_app
 

@@ -13,7 +13,7 @@
 #  duration     :string(255)      default("short")
 #
 
-class AuthToken < ActiveRecord::Base
+class AuthToken < ApplicationRecord
   include ActiveModel::Validations
   #ttr_accessible :email, :phone
   

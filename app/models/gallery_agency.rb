@@ -7,7 +7,7 @@
 #  agency_id  :integer
 #
 
-class GalleryAgency < ActiveRecord::Base
+class GalleryAgency < ApplicationRecord
   belongs_to :agency
   belongs_to :gallery
 

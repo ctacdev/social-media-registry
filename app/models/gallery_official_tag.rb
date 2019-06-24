@@ -7,7 +7,7 @@
 #  official_tag_id :integer
 #
 
-class GalleryOfficialTag < ActiveRecord::Base
+class GalleryOfficialTag < ApplicationRecord
   belongs_to :gallery
   belongs_to :official_tag
 

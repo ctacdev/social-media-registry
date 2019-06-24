@@ -12,7 +12,7 @@
 #  status            :integer          default(0)
 #
 
-class Gallery < ActiveRecord::Base
+class Gallery < ApplicationRecord
 	 #handles logging of activity
 	include PublicActivity::Model
   include Notifications

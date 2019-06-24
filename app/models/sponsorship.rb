@@ -9,7 +9,7 @@
 #  updated_at :datetime
 #
 
-class Sponsorship < ActiveRecord::Base
+class Sponsorship < ApplicationRecord
   #attr_accessible :agency_id, :outlet_id
 
   belongs_to :outlet

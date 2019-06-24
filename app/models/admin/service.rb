@@ -1,4 +1,4 @@
-class Admin::Service < ActiveRecord::Base
+class Admin::Service < ApplicationRecord
   serialize :account_matchers_eval, Hash
 
   scope :sorted, -> { order(:shortname) }

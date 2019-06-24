@@ -4,8 +4,8 @@ class Admin::RelatedPoliciesController < Admin::AdminController
   before_action :set_related_policy, only: [:show, :edit, :update, :destroy, :history, :restore, :reassign]
   protect_from_forgery except: :tokeninput
  
-  before_filter :require_admin
-  before_filter :admin_two_factor
+  before_action :require_admin
+  before_action :admin_two_factor
   
   def index 
     @related_policies = RelatedPolicy.all.order(sort_column + " " + sort_direction) 

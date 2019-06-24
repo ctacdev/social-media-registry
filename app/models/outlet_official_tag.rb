@@ -7,7 +7,7 @@
 #  official_tag_id :integer
 #
 
-class OutletOfficialTag < ActiveRecord::Base
+class OutletOfficialTag < ApplicationRecord
   belongs_to :outlet
   belongs_to :official_tag
 

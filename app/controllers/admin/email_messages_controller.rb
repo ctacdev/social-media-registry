@@ -1,7 +1,7 @@
 class Admin::EmailMessagesController < Admin::AdminController
 
-	before_filter :require_admin, except: [:new, :create, :show]
-	before_filter :admin_two_factor, except: [:new, :create, :show]
+	before_action :require_admin, except: [:new, :create, :show]
+	before_action :admin_two_factor, except: [:new, :create, :show]
 	def index
 		@email_messages = EmailMessage.all.page(params[:page]).per(15)
 	end

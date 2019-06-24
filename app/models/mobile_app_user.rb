@@ -7,7 +7,7 @@
 #  user_id       :integer
 #
 
-class MobileAppUser < ActiveRecord::Base
+class MobileAppUser < ApplicationRecord
   belongs_to :user
   belongs_to :mobile_app
 end

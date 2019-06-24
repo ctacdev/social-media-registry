@@ -7,7 +7,7 @@
 #  agency_id     :integer
 #
 
-class MobileAppAgency < ActiveRecord::Base
+class MobileAppAgency < ApplicationRecord
   belongs_to :agency
   belongs_to :mobile_app
 

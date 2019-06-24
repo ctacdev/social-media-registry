@@ -7,7 +7,7 @@
 #  official_tag_id :integer
 #
 
-class MobileAppOfficialTag < ActiveRecord::Base
+class MobileAppOfficialTag < ApplicationRecord
   belongs_to :mobile_app
   belongs_to :official_tag
 

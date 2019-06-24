@@ -5,7 +5,7 @@ class Admin::UsersController < Admin::AdminController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :edit_notification_settings, :update_notification_settings, :notifications]
   before_action :require_admin, only: [:index, :destroy]
   before_action :require_admin_or_owner, except: [:index, :tokeninput]
-  before_filter :admin_two_factor, except: [:index, :tokeninput, :show]
+  before_action :admin_two_factor, except: [:index, :tokeninput, :show]
   # GET /users
   # GET /users.json
   def index

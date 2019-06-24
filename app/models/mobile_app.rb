@@ -16,7 +16,7 @@
 #  draft_id          :integer
 #
 
-class MobileApp < ActiveRecord::Base
+class MobileApp < ApplicationRecord
   #handles logging of activity
   include PublicActivity::Model
   include Notifications

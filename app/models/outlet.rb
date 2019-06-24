@@ -18,7 +18,7 @@
 require 'open-uri'
 require 'elasticsearch/model'
 
-class Outlet < ActiveRecord::Base
+class Outlet < ApplicationRecord
   #handles logging of activity
   include PublicActivity::Model
   include Notifications

@@ -15,7 +15,7 @@
 #  tag_type                   :integer          default(0)
 #
 
-class OfficialTag < ActiveRecord::Base
+class OfficialTag < ApplicationRecord
   #attr_accessible :shortname, :tag_text
   
   validates :tag_text, :presence => true, :uniqueness => true

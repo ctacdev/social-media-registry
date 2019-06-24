@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 #ruby ENV['RUBY_VERSION']
 
 # Rails
-gem 'rails', '4.2.11.1'
+gem 'rails', '5.1.7'
 
 # DB Connector
 gem 'mysql2', '~> 0.4.9'
@@ -80,7 +80,7 @@ gem "non-stupid-digest-assets"
 group :development, :test do
 
   # testing gems
-  gem 'rspec-rails', '~> 3.0'
+  # gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'coveralls'
   gem "capybara" #feature specs
@@ -91,11 +91,11 @@ group :development, :test do
   # generate fake data in tests & seeds files
   gem 'faker'
 
-  # nice debug tools
-  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'pry'
+  # # nice debug tools
+  # gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+  # gem 'pry'
 
   # adds table data to model files, handy for tracking columns
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
@@ -104,7 +104,7 @@ group :development, :test do
   gem 'letter_opener'
 
   # Ruby style checking
-  gem 'rubocop', require: false
+  # gem 'rubocop', require: false
 
   gem "dotenv-rails", "2.0.0.beta"
 end

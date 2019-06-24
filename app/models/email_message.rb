@@ -11,7 +11,7 @@
 #  updated_at :datetime
 #
 
-class EmailMessage < ActiveRecord::Base
+class EmailMessage < ApplicationRecord
 	belongs_to :user
 
 	validates :to, :presence => true
