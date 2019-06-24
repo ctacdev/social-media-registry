@@ -5,7 +5,7 @@ class Admin::AdminController < ApplicationController
   before_filter :authenticate_user! unless Rails.env.development? || ENV['IMPERSONATE_ADMIN'].present?
   # before_filter :admin_two_factor, except: [:about, :impersonate, :dashboard]
   before_filter :banned_user?, except: [:about, :impersonate, :dashboard]
-  before_filter :headers
+  before_filter :header_set
   helper_method :current_user
 
   def about
@@ -22,7 +22,7 @@ class Admin::AdminController < ApplicationController
     redirect_to admin_dashboards_path, notice: "Now impersonating: #{User.find(params[:user_id]).email} with role: #{User.find(params[:user_id]).role.humanize}"
   end
 
-  def headers
+  def header_set
     response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
     response.headers["Pragma"] = "no-cache"
   end
