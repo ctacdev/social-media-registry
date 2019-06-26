@@ -76,15 +76,15 @@ class Admin::SocialMediaController < Admin::AdminController
     @outlet = Outlet.new
     @outlet.language = "English"
     if current_user.agency
-      @outlet.primary_agency_id = current_user.agency.id 
+      @outlet.agencies << current_user.agency
     end
-    @outlet.primary_contact_id = current_user.id
+    @outlet.users << current_user
   end
 
   # GET /outlets/1/edit
   def edit
     if @outlet.agencies.count == 0
-      @outlet.agences << current_user.agency
+      @outlet.agencies << current_user.agency
     end
   end
 

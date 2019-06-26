@@ -63,9 +63,9 @@ class Admin::MobileAppsController < Admin::AdminController
     @mobile_app = MobileApp.new
     @mobile_app.language = "English"
     if current_user.agency
-      @mobile_app.primary_agency_id = current_user.agency.id 
+      @mobile_app.agencies << current_user.agency
     end
-    @mobile_app.primary_contact_id = current_user.id
+    @mobile_app.users << current_user
     @mobile_app.mobile_app_versions.build
   end
 

@@ -81,17 +81,17 @@ class MobileApp < ActiveRecord::Base
   has_many :mobile_app_official_tags, dependent: :destroy
   has_many :official_tags, :through => :mobile_app_official_tags
 
-  belongs_to :primary_contact, class_name: "User", foreign_key: "primary_contact_id"
-  belongs_to :secondary_contact, class_name: "User", foreign_key: "secondary_contact_id"
+  # belongs_to :primary_contact, class_name: "User", foreign_key: "primary_contact_id"
+  # belongs_to :secondary_contact, class_name: "User", foreign_key: "secondary_contact_id"
 
-  validates :primary_contact, :presence => true
-  validates :secondary_contact, :presence => true
+  # # validates :primary_contact, :presence => true
+  # validates :secondary_contact, :presence => true
 
 
-  belongs_to :primary_agency, class_name: "Agency", foreign_key: "primary_contact_id"
-  belongs_to :secondary_agency, class_name: "Agency", foreign_key: "secondary_contact_id"
+  # belongs_to :primary_agency, class_name: "Agency", foreign_key: "primary_contact_id"
+  # belongs_to :secondary_agency, class_name: "Agency", foreign_key: "secondary_contact_id"
 
-  validates :primary_agency, :presence => true
+  # validates :primary_agency, :presence => true
   
   accepts_nested_attributes_for :mobile_app_versions, reject_if: :all_blank, allow_destroy: true
 

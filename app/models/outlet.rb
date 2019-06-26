@@ -88,17 +88,17 @@ class Outlet < ActiveRecord::Base
   has_many :gallery_items, as: :item, dependent: :destroy
   has_many :galleries, through: :gallery_items, source: "Outlet"
 
-  belongs_to :primary_contact, class_name: "User", foreign_key: "primary_contact_id"
-  belongs_to :secondary_contact, class_name: "User", foreign_key: "secondary_contact_id"
+  # belongs_to :primary_contact, class_name: "User", foreign_key: "primary_contact_id"
+  # belongs_to :secondary_contact, class_name: "User", foreign_key: "secondary_contact_id"
 
-  validates :primary_contact, :presence => true
-  validates :secondary_contact, :presence => true
+  # validates :primary_contact, :presence => true
+  # validates :secondary_contact, :presence => true
 
 
-  belongs_to :primary_agency, class_name: "Agency", foreign_key: "primary_contact_id"
-  belongs_to :secondary_agency, class_name: "Agency", foreign_key: "secondary_contact_id"
+  # belongs_to :primary_agency, class_name: "Agency", foreign_key: "primary_contact_id"
+  # belongs_to :secondary_agency, class_name: "Agency", foreign_key: "secondary_contact_id"
 
-  validates :primary_agency, :presence => true
+  # validates :primary_agency, :presence => true
 
   # acts as taggable is being kept until we do a final data migration (needed for backwards compatibility)
   acts_as_taggable
