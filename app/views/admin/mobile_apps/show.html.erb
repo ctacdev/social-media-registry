@@ -35,12 +35,6 @@
 	  	<div class="panel-body">
 	  		<p>This list comprises everyone listed either as a contact on this mobile app.</p>
 	  		<ul class="list-group">
-	  			<% if @mobile_app.primary_contact %>
-	  			<li class="list-group-item">Primary Contact: <%= user_list_format( @mobile_app.primary_contact) %></li>
-	  			<% end %>
-	  			<% if @mobile_app.secondary_contact %>
-	  			<li class="list-group-item">Secondary Contact: <%= user_list_format(@mobile_app.secondary_contact) %></li>
-	  			<% end %>
 	  			<% @mobile_app.users.each do |user| %>
 	  					<li class="list-group-item"><%= user_list_format(user) %></li>
 	  			<% end %>

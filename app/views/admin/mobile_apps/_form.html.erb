@@ -39,7 +39,7 @@
       <%= f.text_field :short_description, :class => "form-control formwidth" %>
     </div>
     <div class="field">
-      <%= f.label :long_description, "Long Description" %> - Should be the same or similar to your app store description</br>
+      <%= f.label :long_description, "Long Description" %><span class="red">*</span> - Should be the same or similar to your app store description</br>
       <%= f.text_area :long_description, :class => "form-control formwidth" %>
     </div>
     <div class="field">
@@ -64,10 +64,7 @@
         <%= f.text_field :user_tokens, {:class => "form-control formwidth", :value => ""} %>
       </div>
     </div>
-    <div class="field notes">
-      <%= f.label :notes, "Additional Notes:" %> (Viewable only to administrators. <span class="red">Do not include PII content in this field.</span> ) <br/>
-      <%= f.text_area :notes, {:class => "form-control formwidth", :value => "", rows: 5, placeholder: "Suggestion: Include optional contact that doesn’t have an OMB Max account." }%>
-    </div>
+   
     <div class="versions">
       <%= f.fields_for :mobile_app_versions do |mobile_app_version| %>
         <%= render "mobile_app_version_fields",{ f: mobile_app_version, mav: mobile_app_version } %>
