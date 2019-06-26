@@ -51,7 +51,7 @@
   </div>
 </div>
 
-<%= form_tag admin_mobile_apps_path(format: :csv), method: :post, class: 'hidden', id: "csv_export" do %>
+<%= form_tag mobile_apps_export_admin_mobile_apps_path(format: :csv), method: :post, class: 'hidden', id: "csv_export" do %>
   <%= hidden_field_tag :platform, params[:platform] %>
   <%= hidden_field_tag :ids %>
     <%= hidden_field_tag :agency, params[:agency] %>
