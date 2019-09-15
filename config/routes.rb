@@ -277,8 +277,11 @@ Ringsail::Application.routes.draw do
     get '/' => 'dashboards#index'
   end
 
-  devise_for :users
-
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_scope :user do
+	get 'sign_in', :to => 'admin/admin#login', :as => :new_user_session
+	get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
   #######
   #### API ENDPOINTS
   #######

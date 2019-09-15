@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190701151411) do
+ActiveRecord::Schema.define(version: 20190913164501) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id",   limit: 4
@@ -337,6 +337,8 @@ ActiveRecord::Schema.define(version: 20190701151411) do
     t.boolean  "contact_notifications",                         default: true
     t.boolean  "contact_notifications_emails",                  default: true
     t.integer  "email_notification_type",      limit: 4,        default: 0
+    t.string   "provider",                     limit: 255
+    t.string   "uid",                          limit: 255
   end
 
 end

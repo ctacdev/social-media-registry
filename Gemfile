@@ -31,7 +31,8 @@ gem 'to_regexp'
 # Devise does user authentication mechanisms for us
 gem "devise"
 # Integrate devise with a CAS service (here we use OMB Max)
-gem 'devise_cas_authenticatable'
+# gem 'devise_cas_authenticatable'
+gem 'omniauth_openid_connect'
 
 # Tagging support
 gem 'acts-as-taggable-on'
@@ -92,10 +93,10 @@ group :development, :test do
   gem 'faker'
 
   # nice debug tools
-  # gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
-  # gem 'better_errors'
-  # gem 'binding_of_caller'
-  # gem 'pry'
+  #gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry'
 
   # adds table data to model files, handy for tracking columns
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'

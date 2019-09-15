@@ -2,9 +2,9 @@ class Admin::AdminController < ApplicationController
   include PublicActivity::StoreController
   layout "admin"
 
-  before_filter :authenticate_user! unless Rails.env.development? || ENV['IMPERSONATE_ADMIN'].present?
+  before_filter :authenticate_user!, except: [:login]#unless Rails.env.development? || ENV['IMPERSONATE_ADMIN'].present?
   # before_filter :admin_two_factor, except: [:about, :impersonate, :dashboard]
-  before_filter :banned_user?, except: [:about, :impersonate, :dashboard]
+  before_filter :banned_user?, except: [:about, :impersonate, :dashboard, :login]
   before_filter :headers
   helper_method :current_user
 
@@ -14,6 +14,15 @@ class Admin::AdminController < ApplicationController
   
   def faq
     
+  end
+
+  def login 
+
+    render layout: "swagger"
+  end
+
+  def new_session_path(scope)
+    new_user_session_path
   end
 
   def impersonate
@@ -28,17 +37,17 @@ class Admin::AdminController < ApplicationController
   end
 
   def current_user
-    if Rails.env.development? || ENV['IMPERSONATE_ADMIN'].present?
-      if session[:user_id] && User.where(id: session[:user_id]).count > 0
-        @current_user ||= User.find(session[:user_id])
-      else
-        # @current_user ||= User.find(3561)
-         @current_user ||= User.where(role: 2).first
+    # if Rails.env.development? || ENV['IMPERSONATE_ADMIN'].present?
+    #   if session[:user_id] && User.where(id: session[:user_id]).count > 0
+    #     @current_user ||= User.find(session[:user_id])
+    #   else
+    #     # @current_user ||= User.find(3561)
+    #      @current_user ||= User.where(role: 2).first
 
-      end
-    else
-      @current_user ||= warden.authenticate(scope: :user)
-    end
+    #   end
+    # else
+      @current_user ||= User.from_omniauth(request.env["omniauth.auth"])
+    # end
   end
 
   def admin_two_factor

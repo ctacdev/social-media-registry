@@ -2,7 +2,7 @@
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
   # CAS SPECIFIC IMPLEMENTATION
-  config.cas_base_url = "https://login.max.gov/cas/"
+  # config.cas_base_url = "https://login.max.gov/cas/"
 
   # you can override these if you need to, but cas_base_url is usually enough
   # config.cas_login_url = "https://cas.myorganization.com/login"
@@ -26,8 +26,26 @@ Devise.setup do |config|
   # require user records to already exist locally before they can authenticate via
   # CAS, uncomment the following line.
   # config.cas_create_user = false
-  config.cas_username_column = :user
-  
+  # config.cas_username_column = :user
+  config.omniauth :openid_connect, {
+    name: :openid_connect,
+    scope: [:email],
+    response_type: :code,
+    uid_field: "email",
+    issuer: "https://idp.int.identitysandbox.gov/",
+    acr_values: "http://idmanagement.gov/ns/assurance/loa/1",
+    discovery: true,
+    client_options: {
+      port: 443,
+      scheme: "https",
+      response_type: :code,
+      host: "idp.int.identitysandbox.gov",
+      acr_values: "http://idmanagement.gov/ns/assurance/loa/1",
+      identifier: "urn:gov:gsa:openidconnect.profiles:sp:sso:gsa:usdr_dev",
+      secret: "-----BEGIN RSA PRIVATE KEY-----MIIEowIBAAKCAQEAxh42KlIlEGtl/6NOfN+5tSg/eggUsW0dYdWIhshawe7h/9EhJemABXGI+VIiYHOt9QPE3HZ9ky2rUv7iC0MslIvI2sdQ0aPPaYYCXbh8iU2kYEcRPIU9g5NNlKHyUS6jp5HDWeRmN2lF03/dBcnRl9VWPOmHC9iS44xihTimcTZjlMfd59WXSNSbUACGR7vNjAA4N/DnqEUCWd9h016QgtRll6QjjSVBGmaHZjpOWsP+2I7evx51rUinGsgHuihxFT5dL/EcJ3RsncKYku47ekyAMMsm2sJecLgUk4YPvdQzafK/7jeyCtBFcyRTvBs7yapgcuW+LW8PUfu7NT+vTQIDAQABAoIBAATd9SKxBewTV1wiXOlAbcV/iZ+r1yZMse4XWtVE0sX04mRwdMoDpHt9wImvdNy9usZMI2fvGUKmWpEdZdw0+EFl9bc6MkgUKCJFgoVe5OBSofkjhc7gzxQOaFeAav2HkcmqEQyCSeiOk4KQn5Nm09lRCl9QtVqbJXCloD35mE0rp9HmKnkVaVE2sWpfCSIwd3MpJm8BCd0MMmMZAtZuusDb2WHNlnE5r0MKs9itnNjCqs/A11j/lEXGPDECVDmHSCMBdg+8k6nDkyF6evB1udocBjO9Va6M2NgiJaOsw2p8DV8SGuZRwq9/xLTNmOxKR8GQT9XdPs+gCzN84Ty3QdkCgYEA4lV1+gW/ZzmT4Dq7+ZYFNuCoUA2tbzWyB5MxseABTuabjIx5LPV3uagT7VXH3w7HPDfNii+wkplcOHYVFg5HEQdyH3Yhg/86vy7CN8zXwFQTPHCGbAaUfwT5WiehAkhHoiY7hmJ6ljFy9AcTKuHpoGPaQtjDpJyZb5gWUafWs3cCgYEA4BX7A3xXUQiSrY6tQSFmMFQc0jKdpejdfABVm6+yS4i6PZdB0jW1uE4TLRWfCDOT4lzBeSg+7+avYRbIX2iKSwT1GFPyCP9SqH72xW8qJfK5sS9UFh3fvOttq9I7D3yhQtra2M12WalFwKK3hgw/l5s6bWUr2dMpxA3WqyCSPFsCgYAtZKZ8tppkwY9+8UiyDfyNvREEvTmDjGlgS40z95FLmcSos6O5+KFCgws8FnA3tGcRFMAMbvQi8s8kI8qm2cY3DB8/YBnot0+4+E/LkTHUSQhynr7W+5rcvsqj4j7Qjl6PjstxcF7VsKU1fBXEC/snR9+GeKMEaMP9NauERP0ykQKBgQDMV97+D75EO/Ad6rTdZsqcGafqmpOePtrygA+RGEgbj0Rec/dm7OmYd0IPY98RCI+75V/czzGNbSzS+YahUmCCBrRGig512/cRhi4cXsHttwlUpVclj/p+eaYaAG0xMzKPF6pn9/0LyEu+XePDjpnS84/1QEQbr+8vRHtUtDAGbwKBgEBkTWYV81phzRv45/vYahfCtgNieingdIL1WaHiWUeHmRKU61PJRL/wOQfVU78FtvVhUkSFp2+od4xzaIked0WgP/ukFo2X8kSkYfDdjpciwXyJyCMphxqn5vb5v07gWfHSAoVOsXxVJmsB8sbDCSl02SmDkzotZW8wtPhMcAWN-----END RSA PRIVATE KEY-----",
+      redirect_uri: "http://localhost:3000/users/auth/openid_connect/callback",
+    },
+  }
   # You can enable Single Sign Out, which by default is disabled.
   # config.cas_enable_single_sign_out = true
 
