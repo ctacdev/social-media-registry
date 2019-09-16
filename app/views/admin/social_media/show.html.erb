@@ -11,7 +11,7 @@
                     <%= link_to ' Edit', edit_admin_outlet_path(@outlet), {:class => "btn btn-default"} %>
                     <%= link_to ' Publish', publish_admin_outlet_path(@outlet), {:class => "btn btn-default "} %>
                     <%= link_to ' Archive', archive_admin_outlet_path(@outlet), {:class=> "btn btn-default"} %>
-                        
+                    <%= link_to 'Certify', validate_admin_review_social_medium_path(@outlet), {:class=> "btn btn-default"} %>    
                     <p>Note: Archiving removes accounts from public visibility</p>
                 </div>
             </div>

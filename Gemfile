@@ -93,9 +93,9 @@ group :development, :test do
 
   # nice debug tools
   # gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
-  # gem 'better_errors'
-  # gem 'binding_of_caller'
-  # gem 'pry'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry'
 
   # adds table data to model files, handy for tracking columns
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'

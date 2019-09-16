@@ -38,9 +38,12 @@
 
 <p>
   <strong>Updated at:</strong>
-  <%= outlet.updated_at.strftime("%B %e, %Y %H:%M") %>
+  <%= outlet.updated_at.strftime("%B %e, %Y %H:%M %Z") %>
 </p>
-
+<p>
+  <strong>Certified at:</strong>
+  <% validated_string = outlet.validated_at ? outlet.validated_at.strftime("%B %e, %Y %H:%M %Z") : "Not yet certified" %>
+  <%= validated_string %>
 <p>
   <strong>Status:</strong>
   <%= outlet.status.humanize %>

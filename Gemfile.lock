@@ -52,6 +52,12 @@ GEM
     autoprefixer-rails (9.6.0)
       execjs
     bcrypt (3.1.13)
+    better_errors (2.5.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -83,6 +89,7 @@ GEM
       tins (~> 1.6)
     crass (1.0.4)
     database_cleaner (1.7.0)
+    debug_inspector (0.0.3)
     devise (4.6.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -114,6 +121,7 @@ GEM
       multi_json
     equalizer (0.0.11)
     equatable (0.6.0)
+    erubi (1.8.0)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_bot (5.0.2)
@@ -393,6 +401,8 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   annotate!
+  better_errors
+  binding_of_caller
   bootstrap-sass (~> 3.3.3)
   capybara
   cocoon
@@ -419,6 +429,7 @@ DEPENDENCIES
   morrisjs-rails
   mysql2 (= 0.4.10)
   non-stupid-digest-assets
+  pry
   public_activity
   rack-cors
   rails (= 4.2.11.1)
