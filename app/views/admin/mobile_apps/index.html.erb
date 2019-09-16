@@ -9,7 +9,7 @@
           <%= form_for admin_mobile_apps_path, method: :post, html: { class: 'row', id: 'table-controls'} do %>
           <div class="col-sm-12">
             <%= label :agency_selector, "Agency" %>
-            <%= select_tag :agency_selector, options_for_select([["All",""]]+Agency.all.pluck(:name).sort.collect{|agency| [agency,agency]},params[:agency_selector]) %>
+            <%= select_tag :agency_selector, options_for_select([["All",""]]+Agency.where("published_mobile_app_count > 0").pluck(:name).sort.collect{|agency| [agency,agency]},params[:agency_selector]) %>
           </div>
           <div class="col-sm-6">
             <%= label :platform_selector, "Platform" %>

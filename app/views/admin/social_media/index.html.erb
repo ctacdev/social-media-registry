@@ -26,7 +26,7 @@
         <%= form_for admin_outlets_path, method: :post, html: { class: 'row', id: 'table-controls'} do %>
           <div class="col-sm-12">
             <%= label :agency_selector, "Agency" %>
-            <%= select_tag :agency_selector, options_for_select([["All",""]]+Agency.all.pluck(:name).sort.collect{|agency| [agency,agency]},params[:agency_selector]) %>
+            <%= select_tag :agency_selector, options_for_select([["All",""]]+Agency.where("published_outlet_count > 0").pluck(:name).sort.collect{|agency| [agency,agency]},params[:agency_selector]) %>
             
            <p style="font-size: 14px;">Note: Exports are limited to 1000 records at a time, it is recommended to choose an agency to export as CSV.</p>
           </div>

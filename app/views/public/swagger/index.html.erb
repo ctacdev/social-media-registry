@@ -38,7 +38,7 @@
             <div class="row form-inner">
               <div class="col-sm-12">
               <label for="search-social-box">Agency: </label>
-              <%= select_tag "agency", options_from_collection_for_select(Agency.all.order(name: :asc), "id", "name_and_social_media_count"), include_blank: 'Select an Agency', class: "test form-control" , id: "social-media-agency" %>
+              <%= select_tag "agency", options_from_collection_for_select(Agency.where("published_outlet_count > 0").order(name: :asc), "id", "name_and_social_media_count"), include_blank: 'Select an Agency', class: "test form-control" , id: "social-media-agency" %>
               </div>
             </div>
             <div class="row form-inner">
@@ -104,7 +104,7 @@
                 <div class="row form-inner">
                   <div class="col-sm-12">
                   <label for="search-mobile-box">Agency: </label>
-                  <%= select_tag "agency", options_from_collection_for_select(Agency.all.order(name: :asc), "id", "name_and_mobile_count"), include_blank: 'Select an Agency', class: "test form-control" , id: "mobile-agency" %>
+                  <%= select_tag "agency", options_from_collection_for_select(Agency.where("published_mobile_app_count > 0").order(name: :asc), "id", "name_and_mobile_count"), include_blank: 'Select an Agency', class: "test form-control" , id: "mobile-agency" %>
                   </div>
                 </div>
                 <div class="row form-inner">
