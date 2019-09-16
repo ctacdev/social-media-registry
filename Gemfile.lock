@@ -106,17 +106,17 @@ GEM
     dotenv (2.0.0.beta)
     dotenv-rails (2.0.0.beta)
       dotenv (= 2.0.0.beta)
-    elasticsearch (7.3.0)
-      elasticsearch-api (= 7.3.0)
-      elasticsearch-transport (= 7.3.0)
-    elasticsearch-api (7.3.0)
+    elasticsearch (5.0.5)
+      elasticsearch-api (= 5.0.5)
+      elasticsearch-transport (= 5.0.5)
+    elasticsearch-api (5.0.5)
       multi_json
-    elasticsearch-model (0.1.9)
+    elasticsearch-model (5.1.0)
       activesupport (> 3)
-      elasticsearch (> 0.4)
+      elasticsearch (~> 5)
       hashie
-    elasticsearch-rails (0.1.9)
-    elasticsearch-transport (7.3.0)
+    elasticsearch-rails (5.1.0)
+    elasticsearch-transport (5.0.5)
       faraday
       multi_json
     equalizer (0.0.11)
@@ -433,8 +433,8 @@ DEPENDENCIES
   database_cleaner
   devise
   dotenv-rails (= 2.0.0.beta)
-  elasticsearch-model (= 0.1.9)
-  elasticsearch-rails (= 0.1.9)
+  elasticsearch-model (= 5.1.0)
+  elasticsearch-rails (= 5.1.0)
   factory_bot
   faker
   font-awesome-rails

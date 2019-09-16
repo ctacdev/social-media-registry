@@ -52,8 +52,8 @@ gem 'unicorn'
 # generate fake data in tests & seeds files
 #gem 'faker'
 
-gem 'elasticsearch-model', '0.1.9'
-gem 'elasticsearch-rails', '0.1.9'
+gem 'elasticsearch-model', '5.1.0'
+gem 'elasticsearch-rails', '5.1.0'
 ######
 # Assets / Assets related gems
 ######
@@ -93,7 +93,7 @@ group :development, :test do
   gem 'faker'
 
   # nice debug tools
-  #gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry'

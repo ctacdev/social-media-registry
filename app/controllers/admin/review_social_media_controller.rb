@@ -34,7 +34,7 @@ class Admin::ReviewSocialMediaController < Admin::AdminController
     @outlet.validated_at = Time.now
     @outlet.save(validate: false)
     @outlet.create_activity :certified
-    redirect_to admin_outlet_path(@outlet), :notice => "Social Media Account: #{@outlet.organization}, is now published. #{view_context.link_to 'Undo', archive_admin_outlet_path(@outlet)}".html_safe
+    redirect_to admin_outlet_path(@outlet), :notice => "Social Media Account: #{@outlet.organization}, is now certified.".html_safe
   end
 
   def archive

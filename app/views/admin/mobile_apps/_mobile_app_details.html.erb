@@ -35,6 +35,11 @@
   <strong>Status:</strong>
   <%= mobile_app.status.humanize %>
 </p>
+<p>
+  <strong>Certified at:</strong>
+  <% validated_string = mobile_app.validated_at ? mobile_app.validated_at.strftime("%B %e, %Y %H:%M %Z") : "Not yet certified" %>
+  <%= validated_string %>
+<p>
 <p><strong>Platform Details</strong></p>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <% random = rand(10000000) %>
@@ -56,7 +61,7 @@
         <!-- <strong>Description:</strong> <%= mav.description %></br> -->
         <!-- <strong>What's new:</strong> <%= mav.whats_new %></br> -->
         <strong>Screenshot:</strong> <%= mav.screenshot %></br>
-        <strong>Publish Date:</strong> <%= mav.publish_date.strftime("%B %e, %Y %H:%M") if mav.publish_date %> </br>
+        <strong>Publish Date:</strong> <%= mav.publish_date.strftime("%B %e, %Y %H:%M %Z") if mav.publish_date %> </br>
         <!-- <strong>Language:</strong> <%= mav.language %> </br> -->
         <strong>Average Rating:</strong> <%= mav.average_rating %> </br>
         <strong>Number of Ratings:</strong> <%= mav.number_of_ratings %>

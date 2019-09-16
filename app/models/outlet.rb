@@ -204,12 +204,32 @@ class Outlet < ActiveRecord::Base
     }
     if !params["sSearch"].blank?
       query[:query][:bool][:must] <<  {
-                                        match: { 
-                                          _all: {
-                                            query: "%#{params["sSearch"]}%"
-                                          }
-                                        }
-                                      }
+        match: { 
+          _all: {
+            query: "%#{params["sSearch"]}%"
+          }
+        }
+      }
+      query[:query][:bool][:should] <<  {
+        match: { 
+          "contacts" => "%#{params["sSearch"]}%"
+        }
+      }
+      query[:query][:bool][:should] <<  {
+        match: { 
+          "agencies" => "%#{params["sSearch"]}%"
+        }
+      }
+      query[:query][:bool][:should] <<  {
+        match: { 
+          "account" => "%#{params["sSearch"]}%"
+        }
+      }
+      query[:query][:bool][:should] <<  {
+        match: { 
+          "account_name" => "%#{params["sSearch"]}%"
+        }
+      }
     end
     if !params[:service].blank?
       query[:query][:bool][:must] << {
