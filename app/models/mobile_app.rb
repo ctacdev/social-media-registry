@@ -185,6 +185,21 @@ class MobileApp < ActiveRecord::Base
                                           }
                                         }
                                       }
+      query[:query][:bool][:should] <<  {
+        match: { 
+          "contacts" => "%#{params["sSearch"]}%"
+        }
+      }
+      query[:query][:bool][:should] <<  {
+        match: { 
+          "agencies" => "%#{params["sSearch"]}%"
+        }
+      }
+      query[:query][:bool][:should] <<  {
+        match: { 
+          "name" => "%#{params["sSearch"]}%"
+        }
+      }
     end
     if !params[:platform].blank?
       query[:query][:bool][:must] << {
